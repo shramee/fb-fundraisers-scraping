@@ -55,8 +55,8 @@
 					month = now.getDate() > 1 ? months[now.getMonth()] : months[now.getMonth() ? now.getMonth() - 1 : 11];
 					year = now.getDate() === 1 && monthYesterday === 'Decemeber' ? yearNow - 1 : yearNow;
 				} else {
-					date = date.match( /(\d+) ([A-z]+) ?(\d*)/ );
-					month = date[2];
+					date = date.match( /([A-z0-9]+)[-, ]*([A-z0-9]+)[-, ]*([0-9]*)/ );
+					month = isNaN( date[1] ) ? date[1] : date[2];
 					year = date[3] ? date[3] : yearNow;
 				}
 				// endregion Process date
