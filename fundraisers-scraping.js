@@ -38,6 +38,8 @@
 						amount = g.substr( 0, g.indexOf( " / " ) ).replace( /,/g, "" ),
 						charity = $( this ).find( "._5pdi a:first" ).text();
 				// endregion Scrape data
+				
+				if ( ! amount ) return;
 
 				// region Process currency
 				amount = amount.match( /(\D*)(\d+)(\D*)/ );
